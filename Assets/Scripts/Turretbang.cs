@@ -6,12 +6,30 @@ public class Turretbang : MonoBehaviour
 {
 
     public GameObject bulletPrefab;
-    private Collider2d target = null
+    private Collider2d target = null;
+    private float og_time = 3;
+    private float timer = 0;
+    private bool IsOn = false;
+
+    void Start()
+    {
+        timer = og_time;
+    }
+        
+        
     void Update()
     {
-        if (target != null)
+        if (IsOn)
         {
-            Instantiate(bulletPrefab, position new Vector3(x: 0, y:0, z:0), Quaternium.identity)
+            timer -= Time.deltaTime;
+            if (0 >= timer)
+            {
+                if (target != null)
+                {
+                    timer = og_time;
+                    Instantiate(bulletPrefab, transform.position, Quanternion.identity);
+                }
+            }
         }
             
     }
@@ -21,6 +39,16 @@ public class Turretbang : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             target = other;
+            IsOn = true;
+        }
+    }
+
+    public void OnTriggerExit2D(Colllider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            target = null;
+            IsOn = false;
         }
     }
     

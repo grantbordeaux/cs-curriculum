@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class BulletManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Vector2 bulletSpeed;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
-        
+        transform.Translate((Vector3)(translation: bulletSpeed * Time.deltaTime));
     }
+    private void OnTriggerEnter2D
+    
 }
