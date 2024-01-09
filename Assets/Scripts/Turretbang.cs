@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Vector2 = System.Numerics.Vector2;
 
 public class Turretbang : MonoBehaviour
 {
-
+    public GameObject BulletManager; 
     public GameObject bulletPrefab;
-    private Collider2d target = null;
+    private Collider2D target = null;
     private float og_time = 3;
     private float timer = 0;
     private bool IsOn = false;
@@ -27,14 +29,15 @@ public class Turretbang : MonoBehaviour
                 if (target != null)
                 {
                     timer = og_time;
-                    Instantiate(bulletPrefab, transform.position, Quanternion.identity);
+                    BulletManager = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                    BulletManager.bulletSpeed = (target.gameObject.transform.position - transform.position).normalized * 10;
                 }
             }
         }
             
     }
 
-    public void OnTriggerEnter2d(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -43,7 +46,7 @@ public class Turretbang : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit2D(Colllider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

@@ -1,3 +1,4 @@
+using System; 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,16 +6,13 @@ using UnityEngine;
 public class BulletManager : MonoBehaviour
 {
     public Vector2 bulletSpeed;
-    void Start()
-    {
-        
-    }
-
+    
  
     void Update()
     {
-        transform.Translate((Vector3)(translation: bulletSpeed * Time.deltaTime));
+        transform.Translate(bulletSpeed * Time.deltaTime);
     }
-    private void OnTriggerEnter2D
-    
+
+   
+
 }

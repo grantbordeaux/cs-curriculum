@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Axe
   - Spikes
+  - KewlCoin
   layers:
   - Default
   - TransparentFX
