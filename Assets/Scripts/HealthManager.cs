@@ -36,7 +36,7 @@ namespace Grants_Scripts
             }
         }
 
-      private void OnCollisionEnter2D (Collider2D collision )
+      private void  OnCollisionEnter2D (Collider2D collision )
         {
             if (collision.gameObject.CompareTag("Spikes"))
             {

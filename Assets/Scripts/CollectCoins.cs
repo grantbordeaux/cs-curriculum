@@ -22,6 +22,11 @@ namespace Grants_Scripts
             }
 
             else if (collision.gameObject.CompareTag("KewlCoin")) ;
+            {
+                hud.coins++;
+                hud.coins++;
+                Destroy(collision.gameObject);
+            }
         }
 
 

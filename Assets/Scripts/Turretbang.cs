@@ -23,18 +23,21 @@ public class Turretbang : MonoBehaviour
     {
         if (IsOn)
         {
-            timer -= Time.deltaTime;
-            if (0 >= timer)
-            {
-                if (target != null)
-                {
-                    timer = og_time;
-                    BulletManager = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-                    BulletManager.bulletSpeed = (target.gameObject.transform.position - transform.position).normalized * 10;
+           
+               timer -= Time.deltaTime;
+               if (timer <= 0)
+               {
+                   if (target != null)
+                   {
+                       timer = og_time;
+                       BulletManager p = Instantiate(bulletPrefab, transform.position, Quaternion.identity).GetComponent<BulletManager>();
+                       p.bulletSpeed = (target.gameObject.transform.position - transform.position).normalized * 10;
+                   }
                 }
-            }
+
+
         }
-            
+
     }
 
     public void OnTriggerEnter2D(Collider2D other)
