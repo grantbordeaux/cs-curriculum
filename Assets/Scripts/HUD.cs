@@ -31,7 +31,7 @@ namespace Grants_Scripts
 
         void Update()
         {
-            coinText.text = "coins: " + coins.ToString();
+            coinText.text = $"coins: {coins.ToString()}";
             healthMesh.text ="health: " + health.ToString();
         }
 
