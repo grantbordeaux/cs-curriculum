@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
 namespace Grants_Scripts
 {
-    
-    
+ 
+
     public class HealthManager: MonoBehaviour
 
     { 
@@ -12,7 +11,10 @@ namespace Grants_Scripts
         bool iframes = false;
         HUD hud;
         float timer;
-        float originalTimer; 
+        float originalTimer;
+       
+        
+
         void Start()
         {
             hud = GameObject.FindObjectOfType<HUD>();
@@ -36,19 +38,20 @@ namespace Grants_Scripts
             }
         }
 
-      private void  OnCollisionEnter2D (Collider2D collision )
+        private void OnCollisionEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Spikes"))
             {
-                if (iframes)
+                if (!iframes)
                 {
                     iframes = true;
                     hud.health--;
                 }
             }
         }
+
     }
-    
-    
-    
+
+
+
 }
