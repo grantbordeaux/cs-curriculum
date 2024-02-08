@@ -38,10 +38,12 @@ namespace Grants_Scripts
             }
         }
 
-        private void OnCollisionEnter2D(Collider2D collision)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Spikes"))
             {
+                SetHealth(-3)
+
                 if (!iframes)
                 {
                     iframes = true;
@@ -50,7 +52,15 @@ namespace Grants_Scripts
             }
         }
 
+
+        void SetHealth(int amount)
+        {
+            gm.health += amount;
+        }
+
     }
+
+
 
 
 
