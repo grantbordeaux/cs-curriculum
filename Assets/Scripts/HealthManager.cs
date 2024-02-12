@@ -20,6 +20,7 @@ namespace Grants_Scripts
             hud = GameObject.FindObjectOfType<HUD>();
             originalTimer = 1.5f;
             timer = originalTimer;
+            gm = FindAnyObjectByType<HUD>();
         }
 
         
@@ -42,7 +43,8 @@ namespace Grants_Scripts
         {
             if (collision.gameObject.CompareTag("Spikes"))
             {
-                SetHealth(-3)
+                SetHealth(-3);
+                print(gm.health);
 
                 if (!iframes)
                 {
