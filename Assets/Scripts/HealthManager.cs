@@ -10,6 +10,7 @@ namespace Grants_Scripts
         
         bool iframes = false;
         HUD hud;
+        HUD gm;
         float timer;
         float originalTimer;
        
