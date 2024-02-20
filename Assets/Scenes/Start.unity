@@ -2867,10 +2867,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52a17fdc4e24e2cb8bd9390e14014d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectcoins: {fileID: 0}
-  healthmanager: {fileID: 0}
   coinText: {fileID: 0}
   healthMesh: {fileID: 0}
+  coins: 0
+  health: 0
+  maxhealth: 9
+--- !u!1001 &1283649621
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 412193027009803665, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193027009803667, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193027009803671, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.9179833
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193027009803671, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.8722456
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193027009803671, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.3938146
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193027009803671, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193027009803671, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193027009803671, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193027009803671, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193027009803671, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193027009803671, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 412193027009803671, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 34448014912494d33b041af48acd0291, type: 3}
 --- !u!1 &1462189262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3776,6 +3850,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 0
   ySpeed: 0
+  col: {fileID: 0}
+  rd: {fileID: 0}
   scene:
     m_Handle: 0
 --- !u!114 &1856841604
@@ -3790,7 +3866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0e55933207446ba2839f90166f6621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Coin: 0
 --- !u!114 &1856841605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3815,7 +3890,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da0849959bd42b387197add595a9be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
 --- !u!114 &1856841607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3828,10 +3902,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52a17fdc4e24e2cb8bd9390e14014d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectcoins: {fileID: 1856841604}
-  healthmanager: {fileID: 1856841606}
   coinText: {fileID: 1572259503}
   healthMesh: {fileID: 77390941}
+  coins: 0
+  health: 0
+  maxhealth: 9
 --- !u!1 &1984272032
 GameObject:
   m_ObjectHideFlags: 0
@@ -4101,3 +4176,4 @@ SceneRoots:
   - {fileID: 1856841596}
   - {fileID: 1247384856}
   - {fileID: 1462189265}
+  - {fileID: 1283649621}
